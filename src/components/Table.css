@@ -1,0 +1,40 @@
+.table {
+    width: 100%;
+    display: block;
+    margin: 20px 0;
+    max-height: 380px;
+    overflow-y: scroll;
+}
+
+.table::-webkit-scrollbar {
+    background-color: #ace0e0;
+    width: 10px;
+}
+
+.table::-webkit-scrollbar-thumb {
+    background-color: #ca7b66;
+    border-radius: 5px;
+}
+
+.table tbody {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.table tr {
+    width: 100%;
+    display: flex;
+}
+
+.table tr:nth-child(even) {
+    background-color: antiquewhite;
+}
+
+.table tr td {
+    width: 50%;
+    font-size: 1.1rem;
+    padding: 5px 0;
+}
+.table tr td:nth-child(even) {
+    font-weight: 600;
+}
