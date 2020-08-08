@@ -19,7 +19,6 @@ function App() {
   const [countries, setCountries] = useState([]);
   const [tableData, setTableData] = useState([]);
   const [countryCode, setCountryCode] = useState("wordwide");
-  const [loading, setLoading] = useState(false);
   const [countryInfo, setCountryInfo] = useState({});
   const [mapCountries, setMapCountries] = useState([]);
   const [mapCenter, setMapCenter] = useState({ lat: 0, lng: 0 });
@@ -29,7 +28,6 @@ function App() {
 
   useEffect(() => {
     const getDataCountries = async () => {
-      setLoading(true);
       const res = await Axios.get("https://disease.sh/v3/covid-19/countries");
 
       const tempCountries = res.data.map((item) => ({
@@ -38,7 +36,6 @@ function App() {
       }));
       setCountries(tempCountries);
       // setTableData(res.data);
-      setLoading(false);
       setMapCountries(res.data);
 
       const sortedData = sortData(res.data);
